@@ -1,0 +1,15 @@
+<div class="rate">
+  <%= @book.title %>--<%= @book.author %><br>
+  <%= image_tag @book.image %>
+  <%= form_for [@book, @review] do |f| %>
+    <%= f.text_field :rate %>
+    <%= button_tag type: "submit", class: "btn btn--block" do %>評価する<i class="icon-arrow-right"></i>
+    <% end %><br/>
+
+  <%= form_for @review, :url => {:action => :create} do |f| %>
+  <%= f.text_area :review %>
+  <%= f.submit "メモを残す", class: "btn btn--block" %><i class="icon-arrow-right"></i>
+  <% end %>
+
+  <% end %>
+</div>

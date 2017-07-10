@@ -1,0 +1,22 @@
+<div class="contents row">
+  <p><%= @name %>さんのページ</p>
+  <% @books.each do |book| %>
+
+  <table border="1">
+    <tr>
+      <th rowspan="3"><a href="/books/<%= book.id %>"><%= image_tag book.image, :width=>"50%", :alt=>"画像" %></a></th>
+      <td><%= book.title %></td>
+    </tr>
+    <tr>
+      <td><%= book.author %></td>
+    </tr>
+    <tr>
+      <td><%= @name %>さんの評価点<%= book.review(params[:id]).try(:rate) %><br/>
+      メモ<br/>
+      <%= book.review(params[:id]).try(:review) %><br/>
+      <a href="/books/<%= book.id %>/reviews/new", >評価する・メモを残す</a></td>
+    </tr>
+  </table><br/>
+  <% end %>
+
+</div>

@@ -1,0 +1,23 @@
+header {
+  border-top: 20x solid #511717;
+}
+
+body {
+  background-color: #FFFFCC;
+  font-family: "Yu Mincho", YuMincho, serif;
+}
+
+a.title {
+  text-decoration: none;
+}
+
+/*header {
+  background-color: white
+}*/
+
+
+h1 {
+  text-align: center
+}
+
+

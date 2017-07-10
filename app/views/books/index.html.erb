@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <link rel="stylesheet" href="style.css" >
+
+<div class="contents row">
+  <% @books.each do |book| %>
+
+  <table style="border-style:none" bgcolor="white" >
+    <tr>
+      <th width="300"><a href="/books/<%= book.id %>"><%= image_tag book.image, :width=>"50%", :alt=>"画像" %></a><br/>
+      <%= book.title %><br/>
+      <%= book.author %><br/>
+      <% if book.reviews.present? && book.reviews.average(:rate).present? %>
+      <%= book.reviews.average(:rate).round(1) %><br/>
+      <% else %>0.0<br/>
+      <% end %>
+      <%= book.place %>
+      </th>
+    </tr>
+  </table><br/>
+  <% end %>
+
+
+</div>
+
+</body>
+
+</html>
+

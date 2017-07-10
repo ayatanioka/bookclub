@@ -1,0 +1,22 @@
+<section id="book_review">
+  <h2>作品情報</h2>
+  <table border="1" cellspacing="0">
+    <tr>
+      <td rowspan="5"><%= image_tag @book.image, :alt=>"画像" %></td>
+      <td><%= @book.title %></td>
+    </tr>
+    <tr>
+      <td><%= @book.author %></td>
+    </tr>
+    <tr>
+      <td><%= @book.summary %></td>
+    </tr>
+    <tr>
+      <td>評価<br/>
+      <% @book.reviews.each do |rev| %>
+      <%= rev.user.name %>  <%= rev.rate %><br/>
+      <% end %>
+      </td>
+    </tr>
+
+  </table>
